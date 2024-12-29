@@ -8,9 +8,9 @@ class ProductsSlider extends StatelessWidget {
   final List<String> products = [
       'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
       'https://www.redragonzone.com/cdn/shop/files/RedragonK1INGM7241KHzWiredGamingMouse_1_450x450.png?v=1723687505',
-      'https://www.redragonzone.com/cdn/shop/files/M991-RGB-1_450x450.png?v=1686365390',
-      'https://www.redragonzone.com/cdn/shop/files/M991-RGB-1_450x450.png?v=1686365390',
-      'https://www.redragonzone.com/cdn/shop/files/M991-RGB-1_450x450.png?v=1686365390'
+      'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
+      'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
+      'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657'
   ];
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ProductsSlider extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(image: NetworkImage(product), fit: BoxFit.cover,)
+                image: DecorationImage(image: NetworkImage(product), fit: BoxFit.contain,)
               ),
             ),
           );

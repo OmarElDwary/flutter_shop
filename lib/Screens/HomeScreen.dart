@@ -33,17 +33,18 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 200,
+                height: MediaQuery.of(context).size.height * 0.25,
                 child: ProductsSlider(),
               ),
               SizedBox(height: 10),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.55,
+                height: MediaQuery.of(context).size.height * 0.5,
                 child: ProductDisplay(),
               ),
               SizedBox(height: 10),
+              Text('Hot Offers', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.35,
+                height: MediaQuery.of(context).size.height * 0.25,
                 child: HotOffers(),
               )
             ],
