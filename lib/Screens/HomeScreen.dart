@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ProductDisplay(),
               ),
               SizedBox(height: 10),
-              Text('Hot Offers', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+              Text('Hot Offers', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.25,
                 child: HotOffers(),
