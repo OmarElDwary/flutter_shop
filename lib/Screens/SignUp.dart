@@ -1,5 +1,7 @@
+import 'package:animations/animations.dart';
 import 'package:ecommerce_shop/Screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -125,22 +127,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   // Add dialog
   Future<void> registerDialog() async {
-    return showDialog<void>(
+    return showModal<void>(
+        configuration: FadeScaleTransitionConfiguration(
+          transitionDuration: Duration(seconds: 2),
+          reverseTransitionDuration: Duration(milliseconds: 3500)
+        ),
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            content: Text('Account created successfully'),
-            actions: <Widget>[
-              TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MyHomePage()));
-                  },
-                  child: Text('Go to homepage'))
-            ],
-          );
+              content: Text('Account created successfully'),
+              actions: <Widget>[
+                TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Future.delayed(Duration(milliseconds: 800), () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MyHomePage())
+                        );
+                      });
+                    },
+                    child: Text('Go to homepage'))
+              ]
+            );
         });
   }
   togglePassword() {
