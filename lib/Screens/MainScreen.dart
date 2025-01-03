@@ -12,6 +12,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Techno Shop',
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,

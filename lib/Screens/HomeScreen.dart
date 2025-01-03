@@ -2,6 +2,7 @@ import 'package:ecommerce_shop/Widgets/HotOffers.dart';
 import 'package:ecommerce_shop/Widgets/ProductsDisplay.dart';
 import 'package:ecommerce_shop/Widgets/ProductsSlider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -49,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )
             ],
           ),),
-        ),
+        ).animate().fadeIn(duration: 4.seconds)
       ),
     );
   }
