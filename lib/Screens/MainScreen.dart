@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:ecommerce_shop/Screens/HomeScreen.dart';
 import 'package:ecommerce_shop/Screens/SignUp.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +27,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
         )
       ),
-      home:MyHomePage(),
+      home:SignUpScreen(),
     );
   }
 }
