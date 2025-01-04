@@ -1,0 +1,17 @@
+{
+  "our_products": "Our Products",
+  "hot_offers": "Hot Offers",
+  "redragon_mouse": "ماوس ريدراجون",
+  "fps": "FPS",
+  "buttons": "buttons",
+  "register": "Register",
+  "name": "Name",
+  "email": "Email",
+  "emailError": "Email not valid",
+  "password": "Password",
+  "passwordError": "Password must be 6 characters at least",
+  "confirmPassword": "Confirm Password",
+  "confirmPasswordError": "Passwords doesnt match",
+  "accountCreated": "Account created successfully",
+  "goToHome": "Go to home page"
+}

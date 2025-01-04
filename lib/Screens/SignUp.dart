@@ -1,4 +1,5 @@
 import 'package:animations/animations.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:ecommerce_shop/Screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -20,107 +21,106 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(8),
-            child: Text(
-              'Register',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              controller: nameController,
-              validator: (value) {
-                // check for the 1st index of the string
-                if (value == null || value[0] != value[0].toUpperCase()) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('First Letter should be capital'),
-                    duration: Duration(seconds: 2),
-                  ));
-                  return 'First Letter should be capital';
-                }
-              },
-              decoration: InputDecoration(labelText: 'Full Name'),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              controller: emailController,
-              validator: (value) {
-                // check if it contains an @ or not
-                if (value == null || !value.contains("@")) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Please enter a valid email'),
-                    duration: Duration(seconds: 2),
-                  ));
-                  return 'Please enter a valid email';
-                }
-              },
-              decoration: InputDecoration(labelText: 'Email'),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              controller: passwordController,
-              // show and hide password
-              obscureText: passHidden,
-              validator: (value) {
-                // check that the password have a min of 6 characters
-                if (value == null || value.length < 6) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Password must be more than 6 characters'),
-                    duration: Duration(seconds: 2),
-                  ));
-                  return 'Password must be more than 6 characters';
-                }
-              },
-              decoration: InputDecoration(
-                  labelText: 'Password',
-                  suffixIcon: IconButton(
-                      onPressed: () {
-                        togglePassword();
-                      }, icon: passHidden ? Icon(Icons.visibility) : Icon(Icons.visibility_off))),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              controller: confirmPasswordController,
-              obscureText: confirmPassHidden,
-              validator: (value) {
-                // validate it is the same as the text of the password controller
-                if (value == null || value != passwordController.text) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Passwords doesnt match'),
-                    duration: Duration(seconds: 2),
-                  ));
-                  return 'Passwords doesnt match';
-                }
-              },
-              decoration: InputDecoration(
-                  labelText: 'Confirm your password',
-                  suffixIcon: IconButton(
-                      onPressed: () {toggleConfirmPassword();}, icon: confirmPassHidden ? Icon(Icons.visibility) : Icon(Icons.visibility_off))),
-            ),
-          ),
-          ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  registerDialog();
-                }
-              },
-              child: Text('Register'))
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text('Techno Shop', style: TextStyle(fontWeight: FontWeight.bold)),
+        actions: [
+          IconButton(onPressed: () {
+            if (context.locale == Locale('en')) {
+              context.setLocale(Locale('ar'));
+            } else {
+              context.setLocale(Locale('en'));
+            }
+          }, icon: Icon(Icons.language, color: Colors.white,))
         ],
+      ),
+      body: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(8),
+              child: Text(
+                context.tr('register'),
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                controller: nameController,
+                validator: (value) {
+                  // check for the 1st index of the string
+                  if (value == null || value[0] != value[0].toUpperCase()) {
+                    return context.tr('nameError');
+                  }
+                },
+                decoration: InputDecoration(labelText: context.tr('name')),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                controller: emailController,
+                validator: (value) {
+                  // check if it contains an @ or not
+                  if (value == null || !value.contains("@")) {
+                    return context.tr('emailError');
+                  }
+                },
+                decoration: InputDecoration(labelText: context.tr('email')),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                controller: passwordController,
+                // show and hide password
+                obscureText: passHidden,
+                validator: (value) {
+                  // check that the password have a min of 6 characters
+                  if (value == null || value.length < 6) {
+                    return context.tr('passwordError');
+                  }
+                },
+                decoration: InputDecoration(
+                    labelText: context.tr('password'),
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          togglePassword();
+                        }, icon: passHidden ? Icon(Icons.visibility) : Icon(Icons.visibility_off))),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                controller: confirmPasswordController,
+                obscureText: confirmPassHidden,
+                validator: (value) {
+                  // validate it is the same as the text of the password controller
+                  if (value == null || value != passwordController.text) {
+                    return context.tr('confirmPasswordError');
+                  }
+                },
+                decoration: InputDecoration(
+                    labelText: context.tr('confirmPassword'),
+                    suffixIcon: IconButton(
+                        onPressed: () {toggleConfirmPassword();}, icon: confirmPassHidden ? Icon(Icons.visibility) : Icon(Icons.visibility_off))),
+              ),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    registerDialog();
+                  }
+                },
+                child: Text(context.tr('register')))
+          ],
+        ),
       ),
     );
   }
@@ -135,7 +135,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-              content: Text('Account created successfully'),
+              content: Text(context.tr('accountCreated')),
               actions: <Widget>[
                 TextButton(
                     onPressed: () {
@@ -148,7 +148,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         );
                       });
                     },
-                    child: Text('Go to homepage'))
+                    child: Text(context.tr('goToHome')))
               ]
             );
         });

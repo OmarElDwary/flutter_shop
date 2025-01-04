@@ -1,42 +1,42 @@
-import 'package:ecommerce_shop/Widgets/ProductCard.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HotOffers extends StatelessWidget {
   final List<Map<String, dynamic>> products = [
     {
-      'Name': 'Redragon Mouse',
+      'Name': 'redragon_mouse',
       'Image':
           'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
       'Specs': ['7200 FPS, Wireless, 8 buttons'],
       'Price': '820'
     },
     {
-      'Name': 'Redragon Mouse',
+      'Name': 'redragon_mouse',
       'Image':
           'https://www.redragonzone.com/cdn/shop/files/RedragonK1INGM7241KHzWiredGamingMouse_1_450x450.png?v=1723687505',
       'Specs': ['7200 FPS, Wireless, 8 buttons'],
       'Price': '820'
     },
     {
-      'Name': 'Redragon Mouse',
+      'Name': 'redragon_mouse',
       'Image':
           'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
       'Specs': ['7200 FPS, Wireless, 8 buttons'],
       'Price': '820'
     },
     {
-      'Name': 'Redragon Mouse',
+      'Name': 'redragon_mouse',
       'Image':
           'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
       'Specs': ['7200 FPS, Wireless, 8 buttons'],
       'Price': '820'
     },
     {
-      'Name': 'Redragon Mouse',
+      'Name': 'redragon_mouse',
       'Image':
           'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
-      'Specs': ['7200 FPS, Wireless, 8 buttons'],
+      'specs': ['7200 fps, wireless, 8 buttons'],
       'Price': '820'
     }
   ];
@@ -70,7 +70,7 @@ class HotOffers extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          product['Name'] ?? 'No Offer',
+                          context.tr(product['Name']) ?? 'No Offer',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class HotOffers extends StatelessWidget {
                         ...?product['Specs']?.map((spec) =>
                           Column(
                             children: [
-                              Text(spec)
+                              Text(context.tr(spec))
                             ],
                           )
                         )

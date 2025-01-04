@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:ecommerce_shop/Widgets/HotOffers.dart';
 import 'package:ecommerce_shop/Widgets/ProductsDisplay.dart';
 import 'package:ecommerce_shop/Widgets/ProductsSlider.dart';
@@ -12,10 +13,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Locale currentLocale = Locale('en');
+  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.blueAccent,
@@ -27,6 +29,17 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.white
             ),
           ),
+          actions: [
+            IconButton(onPressed: () {
+              if (context.locale == Locale('en')) {
+                context.setLocale(Locale('ar'));
+                currentLocale = Locale('ar');
+              } else {
+                context.setLocale(Locale('en'));
+                currentLocale = Locale('en');
+              }
+            }, icon: Icon(Icons.language))
+          ],
         ),
         body: SingleChildScrollView(
           child: Padding(padding: EdgeInsets.all(10),
@@ -43,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ProductDisplay(),
               ),
               SizedBox(height: 10),
-              Text('Hot Offers', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),),
+              Text(context.tr('hot_offers'), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.25,
                 child: HotOffers(),
@@ -51,7 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),),
         ).animate().fadeIn(duration: 4.seconds)
-      ),
     );
   }
 }

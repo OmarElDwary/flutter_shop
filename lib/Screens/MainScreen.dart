@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:ecommerce_shop/Screens/HomeScreen.dart';
 import 'package:ecommerce_shop/Screens/SignUp.dart';
 import 'package:flutter/material.dart';
 
@@ -12,22 +14,21 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       title: 'Techno Shop',
-      home: Scaffold(
-        appBar: AppBar(
+      theme: ThemeData(
+          primarySwatch: Colors.blue,
+        appBarTheme: AppBarTheme(
           centerTitle: true,
-          backgroundColor: Colors.blueAccent,
-          title: Text(
-            'Techno Shop',
-            style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: Colors.white
-            ),
+          titleTextStyle: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
           ),
-        ),
-        body: SignUpScreen(),
+        )
       ),
+      home:SignUpScreen(),
     );
   }
 }

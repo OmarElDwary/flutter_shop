@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
@@ -35,7 +36,7 @@ class ProductCard extends StatelessWidget {
           Row(
             children: [
               Text(
-                name,
+                context.tr(name),
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: MediaQuery.of(context).size.width * 0.042),
