@@ -1,7 +1,7 @@
 {
   "our_products": "Our Products",
   "hot_offers": "Hot Offers",
-  "redragon_mouse": "ماوس ريدراجون",
+  "redragon_mouse": "Redragon Mouse",
   "fps": "FPS",
   "buttons": "buttons",
   "register": "Register",
@@ -13,5 +13,8 @@
   "confirmPassword": "Confirm Password",
   "confirmPasswordError": "Passwords doesnt match",
   "accountCreated": "Account created successfully",
-  "goToHome": "Go to home page"
+  "goToHome": "Go to home page",
+  "fps7200": "7200 fps",
+  "wireless": "Wireless",
+  "buttons8": "8 Buttons"
 }

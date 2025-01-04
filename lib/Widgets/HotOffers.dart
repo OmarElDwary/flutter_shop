@@ -8,35 +8,35 @@ class HotOffers extends StatelessWidget {
       'Name': 'redragon_mouse',
       'Image':
           'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
-      'Specs': ['7200 FPS, Wireless, 8 buttons'],
+      'specs': ['fps7200', 'wireless', 'buttons8'],
       'Price': '820'
     },
     {
       'Name': 'redragon_mouse',
       'Image':
           'https://www.redragonzone.com/cdn/shop/files/RedragonK1INGM7241KHzWiredGamingMouse_1_450x450.png?v=1723687505',
-      'Specs': ['7200 FPS, Wireless, 8 buttons'],
+      'specs': ['fps7200', 'wireless', 'buttons8'],
       'Price': '820'
     },
     {
       'Name': 'redragon_mouse',
       'Image':
           'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
-      'Specs': ['7200 FPS, Wireless, 8 buttons'],
+      'specs': ['fps7200', 'wireless', 'buttons8'],
       'Price': '820'
     },
     {
       'Name': 'redragon_mouse',
       'Image':
           'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
-      'Specs': ['7200 FPS, Wireless, 8 buttons'],
+      'specs': ['fps7200', 'wireless', 'buttons8'],
       'Price': '820'
     },
     {
       'Name': 'redragon_mouse',
       'Image':
           'https://www.redragonzone.com/cdn/shop/products/M908_grande-1_450x450.png?v=1559726657',
-      'specs': ['7200 fps, wireless, 8 buttons'],
+      'specs': ['fps7200', 'wireless', 'buttons8'],
       'Price': '820'
     }
   ];
@@ -78,8 +78,8 @@ class HotOffers extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                         SizedBox(height: 20,),
-                        ...?product['Specs']?.map((spec) =>
-                          Column(
+                        ...?product['specs']?.map((spec) =>
+                          Row(
                             children: [
                               Text(context.tr(spec))
                             ],

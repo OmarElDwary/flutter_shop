@@ -28,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
         )
       ),
-      home:SignUpScreen(),
+      home:MyHomePage(),
     );
   }
 }

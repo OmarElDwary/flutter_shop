@@ -14,5 +14,8 @@
   "confirmPassword": "تأكيد كلمة السر",
   "confirmPasswordError": "كلمة السر غير متوافقة",
   "accountCreated": "تم انشاء الحساب بنجاح",
-  "goToHome": "اذهب الى الرئيسية"
+  "goToHome": "اذهب الى الرئيسية",
+  "fps7200": "٧٢٠٠ إطار في الثانية",
+  "wireless": "لاسلكي",
+  "buttons8": "٨ أزرار"
 }

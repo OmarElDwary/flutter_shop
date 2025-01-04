@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 context.setLocale(Locale('en'));
                 currentLocale = Locale('en');
               }
-            }, icon: Icon(Icons.language))
+            }, icon: Icon(Icons.language, color: Colors.white))
           ],
         ),
         body: SingleChildScrollView(
