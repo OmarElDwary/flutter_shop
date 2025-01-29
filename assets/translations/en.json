@@ -1,0 +1,20 @@
+{
+  "our_products": "Our Products",
+  "hot_offers": "Hot Offers",
+  "redragon_mouse": "Redragon Mouse",
+  "fps": "FPS",
+  "buttons": "buttons",
+  "register": "Register",
+  "name": "Name",
+  "email": "Email",
+  "emailError": "Email not valid",
+  "password": "Password",
+  "passwordError": "Password must be 6 characters at least",
+  "confirmPassword": "Confirm Password",
+  "confirmPasswordError": "Passwords doesnt match",
+  "accountCreated": "Account created successfully",
+  "goToHome": "Go to home page",
+  "fps7200": "7200 fps",
+  "wireless": "Wireless",
+  "buttons8": "8 Buttons"
+}
