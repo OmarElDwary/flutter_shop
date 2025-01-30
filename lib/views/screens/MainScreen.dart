@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:ecommerce_shop/Screens/SignUp.dart';
+import 'package:ecommerce_shop/views/screens/LoginPage.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -19,15 +19,14 @@ class _MainScreenState extends State<MainScreen> {
       title: 'Techno Shop',
       theme: ThemeData(
           primarySwatch: Colors.blue,
-        appBarTheme: AppBarTheme(
-          centerTitle: true,
-          titleTextStyle: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-        )
-      ),
-      home:SignUpScreen(),
+          appBarTheme: AppBarTheme(
+            centerTitle: true,
+            titleTextStyle: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
+          )),
+      home: LoginPage(),
     );
   }
 }
