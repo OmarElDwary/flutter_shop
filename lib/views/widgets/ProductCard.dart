@@ -12,7 +12,7 @@ class ProductCard extends StatelessWidget {
         '$name added to your cart',
         style: TextStyle(
             color: Colors.blueAccent,
-            fontSize: MediaQuery.of(context).size.width * 0.038),
+            fontSize: MediaQuery.of(context).size.width * 0.08),
       ),
       duration: Duration(seconds: 2),
     ));
@@ -30,8 +30,8 @@ class ProductCard extends StatelessWidget {
           Image.network(
             img,
             // calculate the dimensions based on the screen size
-            height: MediaQuery.of(context).size.height / 6,
-            width: MediaQuery.of(context).size.width / 10,
+            height: MediaQuery.of(context).size.height / 8,
+            width: MediaQuery.of(context).size.width / 20,
           ),
           Row(
             children: [
@@ -39,7 +39,7 @@ class ProductCard extends StatelessWidget {
                 context.tr(name),
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: MediaQuery.of(context).size.width * 0.042),
+                    fontSize: MediaQuery.of(context).size.width * 0.030),
               ),
               Spacer(),
               IconButton(
