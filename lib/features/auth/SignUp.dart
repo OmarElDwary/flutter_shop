@@ -1,10 +1,9 @@
 import 'package:animations/animations.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:ecommerce_shop/views/screens/HomeScreen.dart';
-import 'package:ecommerce_shop/views/screens/LoginPage.dart';
+import 'package:ecommerce_shop/features/Home/HomeScreen.dart';
+import 'package:ecommerce_shop/features/auth/Login/LoginPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});

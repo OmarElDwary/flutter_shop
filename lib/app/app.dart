@@ -1,15 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:ecommerce_shop/views/screens/LoginPage.dart';
 import 'package:flutter/material.dart';
+import '../features/auth/Login/LoginPage.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class App extends StatefulWidget {
+  const App({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<App> createState() => _AppState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
